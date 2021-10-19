@@ -25,13 +25,13 @@ public class HolaAdiosTask implements Runnable {
 
             }
 
-            semaphore.release(2);
+            semaphore.release(1);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
 
         try {
-            semaphore.acquire(1);
+            semaphore.acquire(2);
 
 
             for (int i = 0; i < 5; i++) {
@@ -40,7 +40,7 @@ public class HolaAdiosTask implements Runnable {
 
             }
 
-            semaphore.release(1);
+            semaphore.release();
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

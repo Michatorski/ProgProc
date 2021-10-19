@@ -15,6 +15,12 @@ public class Main{
         Thread holaAdios = new Thread(new HolaAdiosTask( semaphore));
         Thread saludado = new Thread( new YaSaludadoTask(semaphore));
 
+//        try {
+//            semaphore.acquire();
+//        } catch (InterruptedException e){
+//            e.printStackTrace();
+//        }
+
         holaAdios.start();
 
         saludado.start();

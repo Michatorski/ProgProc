@@ -16,9 +16,9 @@ private Semaphore semaphore;
     public void run() {
 
         try {
-            semaphore.acquire(2);
+            semaphore.acquire(1);
             log.info("Ya ha saludado");
-            semaphore.release(1);
+            semaphore.release(2);
         } catch (InterruptedException e){
             e.printStackTrace();
         }
