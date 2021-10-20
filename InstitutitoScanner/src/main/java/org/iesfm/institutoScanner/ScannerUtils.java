@@ -22,7 +22,9 @@ public class ScannerUtils {
 
     public int scanNumber() {
 
+        // Como todavía no tenemos numero, empezamos con null
         Integer num = null;
+        // Mientra el usuario no haya metido un número
         while (num == null)
             try {
                 log.info("Introduce numero: ");
@@ -33,6 +35,7 @@ public class ScannerUtils {
                 log.error("Error, no es un número");
             } finally {
                 {
+                    // Al final del try y catch hacemos un nextLine
                     scanner.nextLine();
                 }
             }

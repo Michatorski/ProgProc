@@ -13,8 +13,8 @@ import java.util.Scanner;
 public class InsitutoScannerConfiguration {
 
     @Bean
-    public InstitutoScannerReader institutoScannerReader (Scanner scanner, GroupScannerReader groupScannerReader){
-        return new InstitutoScannerReader(scanner, groupScannerReader);
+    public InstitutoScannerReader institutoScannerReader (Scanner scanner, GroupScannerReader groupScannerReader, ScannerUtils scannerUtils){
+        return new InstitutoScannerReader(scanner, groupScannerReader, scannerUtils);
     }
     @Bean
     public ScannerUtils scannerUtils (Scanner scanner){
@@ -22,13 +22,13 @@ public class InsitutoScannerConfiguration {
     }
 
     @Bean
-    public GroupScannerReader groupScannerReader(Scanner scanner, StudentScannerReader studentScannerReader){
-        return new GroupScannerReader(scanner, studentScannerReader);
+    public GroupScannerReader groupScannerReader(Scanner scanner, StudentScannerReader studentScannerReader, ScannerUtils scannerUtils){
+        return new GroupScannerReader(scanner, studentScannerReader, scannerUtils);
     }
 
    @Bean
-    public StudentScannerReader studentScannerReader (Scanner scanner){
-       return new StudentScannerReader(scanner);
+    public StudentScannerReader studentScannerReader (Scanner scanner, ScannerUtils scannerUtils){
+       return new StudentScannerReader(scanner, scannerUtils);
    }
 
    @Bean

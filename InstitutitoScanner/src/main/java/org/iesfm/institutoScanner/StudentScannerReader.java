@@ -11,10 +11,11 @@ public class StudentScannerReader {
 
 
     private Scanner scanner;
+    private ScannerUtils scannerUtils;
 
-
-    public StudentScannerReader(Scanner scanner) {
+    public StudentScannerReader(Scanner scanner, ScannerUtils scannerUtils) {
         this.scanner = scanner;
+        this.scannerUtils = scannerUtils;
     }
 
     public Student readScanStudent() {

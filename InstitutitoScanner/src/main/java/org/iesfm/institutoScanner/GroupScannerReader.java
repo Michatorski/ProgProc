@@ -13,10 +13,12 @@ public class GroupScannerReader {
 
     private Scanner scanner;
     private StudentScannerReader studentScannerReader;
+    private ScannerUtils scannerUtils;
 
-    public GroupScannerReader(Scanner scanner, StudentScannerReader studentScannerReader) {
+    public GroupScannerReader(Scanner scanner, StudentScannerReader studentScannerReader, ScannerUtils scannerUtils) {
         this.scanner = scanner;
         this.studentScannerReader = studentScannerReader;
+        this.scannerUtils = scannerUtils;
     }
 
     public Group readScanGroup() {

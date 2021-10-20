@@ -12,10 +12,12 @@ public class InstitutoScannerReader {
 
     private Scanner scanner;
     private GroupScannerReader groupScannerReader;
+    private ScannerUtils scannerUtils;
 
-    public InstitutoScannerReader(Scanner scanner, GroupScannerReader groupScannerReader) {
+    public InstitutoScannerReader(Scanner scanner, GroupScannerReader groupScannerReader, ScannerUtils scannerUtils) {
         this.scanner = scanner;
         this.groupScannerReader = groupScannerReader;
+        this.scannerUtils = scannerUtils;
     }
 
     public Instituto readScanGroup() {
