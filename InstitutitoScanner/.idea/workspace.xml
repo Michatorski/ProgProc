@@ -5,38 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dc0f72c2-dca7-48b6-8113-09adf0ee9af6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../ConcurenciaTask/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ConcurenciaTask/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ConcurenciaTask/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ConcurenciaTask/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ConcurenciaTask/.idea/runConfigurations.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ConcurenciaTask/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/iesfm/institutoScanner/Group.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/iesfm/institutoScanner/Student.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/iesfm/institutoScanner/StudentReader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/iesfm/institutoScanner/annotations/InsitutoScannerConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/iesfm/institutoScanner/annotations/InstitutoScannerMain.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../IoC/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../IoC/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../IoC/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../IoC/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../IoC/.idea/runConfigurations.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../IoC/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ConcurenciaTask/ConcurenciaTask.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ConcurenciaTask/out.log" beforeDir="false" afterPath="$PROJECT_DIR$/../ConcurenciaTask/out.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ConcurenciaTask/src/main/java/HolaAdiosTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ConcurenciaTask/src/main/java/HolaAdiosTask.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ConcurenciaTask/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ConcurenciaTask/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ConcurenciaTask/src/main/java/YaSaludadoTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ConcurenciaTask/src/main/java/YaSaludadoTask.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ConcurenciaTask/target/classes/HolaAdiosTask.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ConcurenciaTask/target/classes/HolaAdiosTask.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ConcurenciaTask/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ConcurenciaTask/target/classes/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ConcurenciaTask/target/classes/YaSaludadoTask.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ConcurenciaTask/target/classes/YaSaludadoTask.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,5 +56,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
