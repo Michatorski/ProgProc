@@ -1,6 +1,6 @@
 package org.iesfm.institutoScanner.annotations;
 
-import org.iesfm.institutoScanner.StudentReader;
+import org.iesfm.institutoScanner.StudentScannerReader;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -11,9 +11,9 @@ public class InstitutoScannerMain {
                         InsitutoScannerConfiguration.class
                 );
         //Sacamos el bean StudentReader del contexto de la applicaion
-        StudentReader program = context.getBean(StudentReader.class);
+        StudentScannerReader program = context.getBean(StudentScannerReader.class);
         //Leemos
-        program.readStudent();
+        program.readScanStudent();
 
     }
 }
