@@ -1,6 +1,6 @@
 package org.iesfm.institutoScanner.annotations;
 
-import org.iesfm.institutoScanner.StudentScannerReader;
+import org.iesfm.institutoScanner.reader.StudentScannerReader;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
