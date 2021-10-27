@@ -12,6 +12,10 @@ public class InstitutoReadAndWrite {
     }
 
     public void readAndWrite(){
+       Instituto instituto = institutoScannerReader.readScanInstituto();
 
+       institutoWritter.writeInstituto(instituto);
     }
+
+
 }

@@ -23,7 +23,7 @@ public class InstitutoScannerReader {
         this.scannerUtils = scannerUtils;
     }
 
-    public Instituto readScanGroup() {
+    public Instituto readScanInstituto() {
 
         log.info("Introduce nombre del instituto: ");
         String name = scanner.nextLine();
