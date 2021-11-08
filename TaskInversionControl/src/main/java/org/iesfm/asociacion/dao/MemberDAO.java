@@ -8,5 +8,5 @@ public interface MemberDAO {
     List<Member> list();
     void insert(Member member);
     void delete(String memberNif);
-    void modify(String member);
+    void modify(Member upfatedMember);
 }
