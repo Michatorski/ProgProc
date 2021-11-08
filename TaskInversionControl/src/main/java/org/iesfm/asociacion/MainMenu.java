@@ -1,5 +1,7 @@
 package org.iesfm.asociacion;
 
+import org.iesfm.asociacion.reader.MemberReader;
+import org.iesfm.asociacion.service.MemberService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -9,10 +11,14 @@ public class MainMenu {
     private final static Logger log = LoggerFactory.getLogger(MainMenu.class);
     private Scanner scan;
     private Member member;
+    private MemberService memberService;
+    private MemberReader memberReader;
 
-    public MainMenu(Scanner scan, Member member) {
+    public MainMenu(Scanner scan, Member member, MemberService memberService, MemberReader memberReader) {
         this.scan = scan;
         this.member = member;
+        this.memberService = memberService;
+        this.memberReader = memberReader;
     }
 
     public void mainMenu() {
@@ -30,12 +36,16 @@ public class MainMenu {
 
             switch (option) {
                 case 1:
+                    memberService.insert(memberReader.readMemmber());
                     break;
                 case 2:
+                    memberService.list();
                     break;
                 case 3:
+                    memberService.delete(member.getNif());
                     break;
                 case 4:
+                    memberService.modify(member);
                     break;
                 case 5:
                     salir = true;

@@ -22,7 +22,6 @@ public class MemberService implements MemberDAO {
     @Override
     public void insert(Member member) {
         members.put(member.getNif(), member);
-
     }
 
     @Override
@@ -30,8 +29,9 @@ public class MemberService implements MemberDAO {
         members.remove(memberNif);
     }
 
+
     @Override
-    public void modify( Member updateMember) {
+    public void modify(Member updateMember) {
         members.replace(updateMember.getNif(), updateMember);
     }
 }
