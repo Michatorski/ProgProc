@@ -31,7 +31,7 @@ public class MemberService implements MemberDAO {
     }
 
     @Override
-    public void modify(String nif, Member updateMember) {
-        members.replace(nif, updateMember);
+    public void modify( Member updateMember) {
+        members.replace(updateMember.getNif(), updateMember);
     }
 }
