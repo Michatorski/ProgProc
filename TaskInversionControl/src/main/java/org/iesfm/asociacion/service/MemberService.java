@@ -2,6 +2,7 @@ package org.iesfm.asociacion.service;
 
 import org.iesfm.asociacion.Member;
 import org.iesfm.asociacion.dao.MemberDAO;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 
 import java.util.HashMap;
@@ -28,7 +29,6 @@ public class MemberService implements MemberDAO {
     public void delete(String memberNif) {
         members.remove(memberNif);
     }
-
 
     @Override
     public void modify(Member updateMember) {
