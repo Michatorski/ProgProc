@@ -1,5 +1,8 @@
-package org.iesfm.institutoScanner;
+package org.iesfm.institutoScanner.reader;
 
+import org.iesfm.institutoScanner.Group;
+import org.iesfm.institutoScanner.Instituto;
+import org.iesfm.institutoScanner.ScannerUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -20,7 +23,7 @@ public class InstitutoScannerReader {
         this.scannerUtils = scannerUtils;
     }
 
-    public Instituto readScanGroup() {
+    public Instituto readScanInstituto() {
 
         log.info("Introduce nombre del instituto: ");
         String name = scanner.nextLine();

@@ -1,5 +1,7 @@
-package org.iesfm.institutoScanner;
+package org.iesfm.institutoScanner.reader;
 
+import org.iesfm.institutoScanner.ScannerUtils;
+import org.iesfm.institutoScanner.Student;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
