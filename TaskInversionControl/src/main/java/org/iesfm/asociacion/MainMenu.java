@@ -1,5 +1,6 @@
 package org.iesfm.asociacion;
 
+import org.iesfm.asociacion.program.MemberProgram;
 import org.iesfm.asociacion.reader.MemberReader;
 import org.iesfm.asociacion.service.MemberService;
 import org.slf4j.Logger;
@@ -10,18 +11,15 @@ import java.util.Scanner;
 public class MainMenu {
     private final static Logger log = LoggerFactory.getLogger(MainMenu.class);
     private Scanner scan;
-    private Member member;
-    private MemberService memberService;
-    private MemberReader memberReader;
 
-    public MainMenu(Scanner scan, Member member, MemberService memberService, MemberReader memberReader) {
+    private MemberProgram program;
+
+    public MainMenu(Scanner scan, MemberProgram program) {
         this.scan = scan;
-        this.member = member;
-        this.memberService = memberService;
-        this.memberReader = memberReader;
+        this.program = program;
     }
 
-    public void mainMenu() {
+    public void executeMenu() {
         boolean salir = false;
         while (!salir) {
             log.info("Bienvenido. Escoge la opicion que quiere realizar.");
@@ -36,16 +34,17 @@ public class MainMenu {
 
             switch (option) {
                 case 1:
-                    memberService.insert(memberReader.readMemmber());
+                    program.list();
                     break;
                 case 2:
-                    memberService.list();
+                    program.insert();
                     break;
                 case 3:
-                    memberService.delete(member.getNif());
+                    log.info("Introduce un nif ya registrado");
+                    program.delete(scan.nextLine());
                     break;
                 case 4:
-                    memberService.modify(member);
+                    program.modify();
                     break;
                 case 5:
                     salir = true;

@@ -15,7 +15,7 @@ public class MemberReader {
         this.scanner = scanner;
     }
 
-    public Member readMemmber(){
+    public Member readMember(){
         log.info("Introduce 'nif' del Student");
         String nif = scanner.nextLine();
         log.info("Introduce 'name' del Student");
