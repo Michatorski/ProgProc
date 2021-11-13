@@ -1,5 +1,8 @@
 package org.iesfm.shop;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.Objects;
 import java.util.Set;
 
@@ -9,7 +12,10 @@ public class Article {
     private double price;
     private Set<String> tags;
 
-    public Article(int id, String name, double price, Set<String> tags) {
+    @JsonCreator
+    public Article(@JsonProperty("id") int id,
+                   @JsonProperty("name")String name,
+                   @JsonProperty("price")double price, Set<String> tags) {
         this.id = id;
         this.name = name;
         this.price = price;
