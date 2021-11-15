@@ -21,7 +21,7 @@ public class JDBCArticleDAO implements ArticleDAO {
 
     private final static String SELECT_ARTICLE = "SELECT * FROM Article";
     private final static String SELECT_TAG_BY_ARTICLE_ID = "SELECT * FROM Tag WHERE article_id = :article_id";
-
+    private final static String SEL
 
 
     private Article article;
@@ -75,7 +75,12 @@ public class JDBCArticleDAO implements ArticleDAO {
         return false;
     }
 
-    public Set<String> getTag (int articleId){
+    public Set<String> getArticleTag(){
+        Map<String, Object> params = new HashMap<>();
+        return jdbc.query()
+    }
+
+    public Set<String> getArticleByTag (int articleId){
         Map<String, Object> params = new HashMap<>();
         params.put("article_id", articleId);
         return jdbc.queryForObject(SELECT_TAG_BY_ARTICLE_ID,
