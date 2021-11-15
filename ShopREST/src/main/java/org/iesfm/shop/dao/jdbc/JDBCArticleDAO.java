@@ -21,23 +21,25 @@ public class JDBCArticleDAO implements ArticleDAO {
 
     private final static String SELECT_ARTICLE = "SELECT * FROM Article";
     private final static String SELECT_TAG_BY_ARTICLE_ID = "SELECT * FROM Tag WHERE article_id = :article_id";
-    private final static String SEL
-
+    private final static String SELECT_ARTICLE_BY_ID = "SELECT * FROM Article WHERE id = :id";
+    private final static String SELECT_TAG = "SELECT * FROM Tag";
 
     private Article article;
+
     private NamedParameterJdbcTemplate jdbc;
 
     @Override
     public List<Article> list() {
-        Map<String, Object> params = new HashMap<>();
-        return jdbc.query(SELECT_ARTICLE,
-                params,
-                (rs, rowNum) -> new Article(
-                        rs.getInt("id"),
-                        rs.getString("name"),
-                        rs.getDouble("price"),
-                        getTag()
-                ));
+        return null;
+//        Map<String, Object> params = new HashMap<>();
+//        return jdbc.query(SELECT_ARTICLE,
+//                params,
+//                (rs, rowNum) -> new Article(
+//                        rs.getInt("id"),
+//                        rs.getString("name"),
+//                        rs.getDouble("price"),
+//                        getTag()
+//                ));
     }
 
     @Override
@@ -47,11 +49,21 @@ public class JDBCArticleDAO implements ArticleDAO {
 
     @Override
     public Article get(int id) {
-        try{
-            return null;
-        } catch ( EmptyResultDataAccessException e){
-            return null;
-        }
+        return null;
+//        Map<String, Object> params = new HashMap<>();
+//        params.put("id", id);
+//        try{
+//            return jdbc.queryForObject(SELECT_ARTICLE_BY_ID,
+//                    params,
+//                    (rs, rowNum) -> new Article(
+//                            rs.getInt(id),
+//                            rs.getString("name"),
+//                            rs.getDouble("price"),
+//                            getTag()
+//                    ));
+//        } catch ( EmptyResultDataAccessException e){
+//            return null;
+//        }
 
     }
 
@@ -75,20 +87,26 @@ public class JDBCArticleDAO implements ArticleDAO {
         return false;
     }
 
-    public Set<String> getArticleTag(){
-        Map<String, Object> params = new HashMap<>();
-        return jdbc.query()
-    }
+//    public Set<String> getTag(){
+//        Map<String, Object> params = new HashMap<>();
+//        return jdbc.query(SELECT_TAG,
+//                params,
+//                (rs, rowNum) -> new Set<String>(
+//                        rs.getInt("article_id"),
+//                        rs.getString("name")
+//                ));
+//    }
 
     public Set<String> getArticleByTag (int articleId){
-        Map<String, Object> params = new HashMap<>();
-        params.put("article_id", articleId);
-        return jdbc.queryForObject(SELECT_TAG_BY_ARTICLE_ID,
-                params,
-                (rs, rowNum) -> new Set<String>(
-                        rs.getInt("id"),
-                        rs.getString("name")
-                ) {
-                });
+        return null;
+//        Map<String, Object> params = new HashMap<>();
+//        params.put("article_id", articleId);
+//        return jdbc.queryForObject(SELECT_TAG_BY_ARTICLE_ID,
+//                params,
+//                (rs, rowNum) -> new Set<String>(
+//                        rs.getInt("id"),
+//                        rs.getString("name")
+//                ) {
+//                });
     }
 }
