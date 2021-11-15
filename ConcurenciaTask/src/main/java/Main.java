@@ -22,12 +22,15 @@ public class Main{
 //        }
 
         holaAdios.start();
-
         saludado.start();
 
-        holaAdios.join();
+        try{
+            holaAdios.join();
+            saludado.join();
 
-        saludado.join();
+        } catch (InterruptedException e){
+            e.printStackTrace();
+        }
 
         log.info("Ya ha terminado.");
 
