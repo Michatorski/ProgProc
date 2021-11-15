@@ -8,8 +8,8 @@ public class Main {
         // 1. tiene dos permit libres
         Semaphore semaphore = new Semaphore(2);
 
-        Thread holaThread = new Thread(new PrintMessageTask(semaphore, "Hola", 1000));
-        Thread adiosThread = new Thread(new PrintMessageTask(semaphore, "Adios", 1000));
+        Thread holaThread = new Thread(new PrintMessageTask(semaphore, "Hola", 100));
+        Thread adiosThread = new Thread(new PrintMessageTask(semaphore, "Adios", 100));
         // Si el semaforo tiene dos permit
         try {
             // 2. Se adquieren los dos permit, ya no hay permits libres
