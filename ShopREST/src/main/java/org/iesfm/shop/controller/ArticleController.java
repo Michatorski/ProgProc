@@ -31,4 +31,9 @@ public class ArticleController {
     public Article get(@PathVariable("id") int id){
         return articleDAO.get(id);
     }
+
+    @RequestMapping(method = RequestMethod.DELETE, path = "/shop/{id}")
+    public Article delete(@PathVariable("id") int id){
+        return articleDAO.get(id);
+    }
 }
