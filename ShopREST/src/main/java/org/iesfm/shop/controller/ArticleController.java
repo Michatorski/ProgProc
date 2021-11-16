@@ -24,12 +24,24 @@ public class ArticleController {
 
     @RequestMapping(method = RequestMethod.GET, path = "/articles?tag=libros")
     public List <Article> list(@RequestParam(name = "tag") String tag){
-        return articleDAO.list(tag);
+        List<Article> articles= articleDAO.list(tag);
+        if (articles == null){
+            throw  new ResponseStatusException(
+                    HttpStatus.NOT_FOUND, "ERROR 404, article not found");
+        } else {
+            return  articles;
+        }
     }
 
     @RequestMapping(method = RequestMethod.GET, path = "/articles/{id}")
     public Article get(@PathVariable("id") int id){
-        return articleDAO.get(id);
+        Article article = articleDAO.get(id);
+        if (article == null){
+            throw  new ResponseStatusException(
+                    HttpStatus.NOT_FOUND, "ERROR 404, article not found");
+        } else {
+            return  article;
+        }
     }
 
     @RequestMapping(method = RequestMethod.POST, path = "/articles")
