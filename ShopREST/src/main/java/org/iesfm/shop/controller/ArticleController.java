@@ -2,10 +2,7 @@ package org.iesfm.shop.controller;
 
 import org.iesfm.shop.Article;
 import org.iesfm.shop.dao.ArticleDAO;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -29,6 +26,14 @@ public class ArticleController {
 
     @RequestMapping(method = RequestMethod.GET, path = "/shop/{id}")
     public Article get(@PathVariable("id") int id){
+        return articleDAO.get(id);
+    }
+
+    @RequestMapping(method = RequestMethod.POST, path = "/shop")
+    public void createArticle(@RequestBody Article article){ articleDAO.insert(article);}
+
+    @RequestMapping(method = RequestMethod.DELETE, path = "/shop/{id}")
+    public Article delete(@PathVariable("id") int id){
         return articleDAO.get(id);
     }
 }
