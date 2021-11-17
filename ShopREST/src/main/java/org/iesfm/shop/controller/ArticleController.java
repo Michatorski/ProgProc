@@ -22,15 +22,14 @@ public class ArticleController {
         return articleDAO.list();
     }
 
-    @RequestMapping(method = RequestMethod.GET, path = "/articles?tag=libros")
-    public List <Article> list(@RequestParam(name = "tag") String tag){
-        List<Article> articles= articleDAO.list(tag);
-        if (articles == null){
-            throw  new ResponseStatusException(
-                    HttpStatus.NOT_FOUND, "ERROR 404, article not found");
-        } else {
-            return  articles;
-        }
+    @RequestMapping(method = RequestMethod.GET, path = "/articles")
+    public List <Article> list(@RequestParam(name = "tag", required = false) String tags){
+        List<Article> articles= articleDAO.list(tags);
+       if (tags == null){
+           return articleDAO.list();
+       } else {
+           return articles;
+       }
     }
 
     @RequestMapping(method = RequestMethod.GET, path = "/articles/{id}")
