@@ -16,11 +16,11 @@ public class ArticleController {
     public ArticleController(ArticleDAO articleDAO) {
         this.articleDAO = articleDAO;
     }
-
-    @RequestMapping(method = RequestMethod.GET, path = "/articles")
-    public List<Article> list(){
-        return articleDAO.list();
-    }
+//
+//    @RequestMapping(method = RequestMethod.GET, path = "/articles")
+//    public List<Article> list(){
+//        return articleDAO.list();
+//    }
 
     @RequestMapping(method = RequestMethod.GET, path = "/articles")
     public List <Article> list(@RequestParam(name = "tag", required = false) String tags){
@@ -63,7 +63,7 @@ public class ArticleController {
         }
     }
 
-    @RequestMapping(method = RequestMethod.PUT, path = "/article/{id}")
+    @RequestMapping(method = RequestMethod.PUT, path = "/articles/{id}")
     public void update(@RequestBody Article article){
         if (!articleDAO.update(article)){
             throw  new ResponseStatusException(

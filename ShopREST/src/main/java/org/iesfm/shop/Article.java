@@ -15,7 +15,8 @@ public class Article {
     @JsonCreator
     public Article(@JsonProperty("id") int id,
                    @JsonProperty("name")String name,
-                   @JsonProperty("price")double price, Set<String> tags) {
+                   @JsonProperty("price")double price,
+                   @JsonProperty("tags") Set<String> tags) {
         this.id = id;
         this.name = name;
         this.price = price;

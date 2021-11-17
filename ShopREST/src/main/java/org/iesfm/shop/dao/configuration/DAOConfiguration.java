@@ -1,7 +1,11 @@
 package org.iesfm.shop.dao.configuration;
 
 import org.iesfm.shop.dao.ArticleDAO;
+import org.iesfm.shop.dao.ClientDAO;
+import org.iesfm.shop.dao.OrderDAO;
 import org.iesfm.shop.dao.inmemory.InMemoryArticleDAO;
+import org.iesfm.shop.dao.inmemory.InMemoryClientDAO;
+import org.iesfm.shop.dao.inmemory.InMemoryOrderDAO;
 import org.iesfm.shop.dao.jdbc.JDBCArticleDAO;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -13,6 +17,14 @@ import javax.sql.DataSource;
 
 @Configuration
 public class DAOConfiguration {
+
+    @Bean
+    public OrderDAO orderDAO (){return  new InMemoryOrderDAO();
+    }
+
+    @Bean
+    public ClientDAO clientDAO(){ return new InMemoryClientDAO();
+    }
 
     @Bean
     public ArticleDAO articleDAO (){
