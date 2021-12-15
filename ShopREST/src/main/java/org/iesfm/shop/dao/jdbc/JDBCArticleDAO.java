@@ -32,15 +32,15 @@ public class JDBCArticleDAO implements ArticleDAO {
     public List<Article> list() {
 
         Map<String, Object> params = new HashMap<>();
-        return null;
-//        return jdbc.query(SELECT_ARTICLE,
-//                params,
-//                (rs, rowNum) -> new Article(
-//                        rs.getInt("id"),
-//                        rs.getString("name"),
-//                        rs.getDouble("price"),
-//                        getArticleTags()
-//                ));
+
+        return jdbc.query(SELECT_ARTICLE,
+                params,
+                (rs, rowNum) -> new Article(
+                        rs.getInt("id"),
+                        rs.getString("name"),
+                        rs.getDouble("price"),
+                        getArticleTags(rs.getInt("id"))
+                ));
     }
 
     @Override

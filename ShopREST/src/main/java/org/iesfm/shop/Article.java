@@ -23,6 +23,9 @@ public class Article {
         this.tags = tags;
     }
 
+    public Article(){
+    }
+
     public int getId() {
         return id;
     }
