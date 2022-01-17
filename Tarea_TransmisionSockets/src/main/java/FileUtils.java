@@ -1,18 +1,20 @@
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Scanner;
 
 public class FileUtils {
 
-    public static void writeFile(File file, String conntent) throws IOException{
+    public static Scanner scanner = new Scanner(System.in);
+
+    public static void writeFile(File file, String content) throws IOException{
         try (FileWriter fileWriter = new FileWriter(file, true)){
-            fileWriter.write(conntent);
-            fileWriter.write(":end");
+            fileWriter.write(content);
         }
     }
 
-    public static boolean fileExists (File filePath, String filename){
-        String path = filePath.getAbsolutePath() + "/" + filename;
-        return  new File(path).exists();
+    public static File askPath (){
+
+        return new File(scanner.nextLine());
     }
 }

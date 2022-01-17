@@ -3,7 +3,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.Socket;
-import java.util.Scanner;
+
 
 public class ReadMessage implements Runnable {
     private Socket socket;
@@ -12,19 +12,30 @@ public class ReadMessage implements Runnable {
         this.socket = socket;
     }
 
-    Scanner scanner = new Scanner(System.in);
+//C:\Users\OmegaKnight\Documents\Prueba\test.txt
 
     @Override
     public void run() {
-        try (BufferedReader reader = new BufferedReader(new BufferedReader(new InputStreamReader(socket.getInputStream())))) {
+
+        try (BufferedReader reader = new BufferedReader(
+                new BufferedReader(
+                        new InputStreamReader(socket.getInputStream()))
+        )) {
             String line;
-            String path = scanner.nextLine();
-            File file = new File(path);
 
-            while ((line = reader.readLine()) != null) {
-                FileUtils.writeFile(file, line + "\n");
+            System.out.println("Introduce la ruta para nuevo archivo a escribir:");
+            File newFile = FileUtils.askPath();
+            if (!newFile.exists()) {
+                while ((line = reader.readLine()) != null) {
+                    FileUtils.writeFile(newFile, line + "\n");
 
+                }
+                System.out.println("Se ha creado nuevo archivo.");
+            } else {
+                System.out.println("Ya existe este fichero. Intentalo de nuevo:");
+                FileUtils.askPath();
             }
+
         } catch (IOException e) {
             e.printStackTrace();
         }

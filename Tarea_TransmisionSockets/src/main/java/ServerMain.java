@@ -10,9 +10,9 @@ public class ServerMain {
         try{
             ServerSocket ss = new ServerSocket(serverPort);
             Socket socket = ss.accept();
-            Scanner scanner = new Scanner(System.in);
 
-
+            Thread sendTask = new Thread(new SendMessage(socket));
+            sendTask.start();
         } catch (IOException e){
             e.printStackTrace();
         }
