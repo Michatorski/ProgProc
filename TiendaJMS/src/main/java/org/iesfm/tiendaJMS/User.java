@@ -1,4 +1,4 @@
-package org.iesfm.tiendaJMS.users;
+package org.iesfm.tiendaJMS;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
