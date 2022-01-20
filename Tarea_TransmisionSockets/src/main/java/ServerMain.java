@@ -5,7 +5,7 @@ import java.net.Socket;
 public class ServerMain {
 
     //C:\Users\OmegaKnight\Documents\Prueba\test.txt
-    // /micho/Capeta/test.txt
+    // home/micho/Capeta/test.txt
 
     public static void main(String[] args) {
         int serverPort = 4000;
@@ -26,10 +26,11 @@ public class ServerMain {
                     try (PrintWriter printWriter = new PrintWriter(socket.getOutputStream())) {
                         while ((line = reader.readLine()) != null) {
 
-                            printWriter.write(line + " " + "\n");
+                            printWriter.println(line);
+                            printWriter.flush();
 
                         }
-                        printWriter.write(":end");
+                        printWriter.println(":end");
                         printWriter.flush();
 
                         System.out.println("Enviado");
@@ -40,7 +41,6 @@ public class ServerMain {
                 }
             } else {
                 System.out.println("Archivo no existe. Escribe otra ruta:");
-                FileUtils.askPath();
             }
         } catch (IOException e){
             e.printStackTrace();

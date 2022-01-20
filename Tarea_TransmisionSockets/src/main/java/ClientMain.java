@@ -1,14 +1,11 @@
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.net.Socket;
 
 
 public class ClientMain {
 
     //C:\Users\OmegaKnight\Documents\Prueba\test.txt
-    // home/Micho/test.txt
+    // /home/micho/Capeta/test.txt
 
     public static void main(String[] args) {
 
@@ -27,19 +24,22 @@ public class ClientMain {
                 )) {
                     String line;
 
-                    while ((line = reader.readLine()) != null) {
-                        FileUtils.writeFile(newFile, line + "\n");
+                    try (FileWriter fileWriter = new FileWriter(newFile)) {
+                        while ((line = reader.readLine()) != null) {
+                            if(line.equals(":end")) {
+                                break;
+                            }
+                            fileWriter.write(line + "\n");
+                        }
 
+                        System.out.println("Hecho");
                     }
-                    System.out.println("Se ha creado nuevo archivo.");
-
 
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
             } else {
                 System.out.println("Ya existe este fichero. Intentalo de nuevo:");
-                FileUtils.askPath();
             }
 
         } catch (IOException e) {
